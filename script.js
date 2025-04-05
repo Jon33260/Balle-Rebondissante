@@ -19,9 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (posY >= container.clientHeight - ball.clientHeight) {
             posY = container.clientHeight - ball.clientHeight;
             velocity *= -bounceFactor;
-            // 🔥 Squash visible UNIQUEMENT au moment de l'impact
+            // Squash visible UNIQUEMENT au moment de l'impact
             ball.style.transform = "translateX(-50%) scale(1.3, 0.7)";
-            // 🔥 Quand la balle s'arrête, elle REDEVIENT 100% RONDE
+            // Quand la balle s'arrête, elle REDEVIENT 100% RONDE
             if (Math.abs(velocity) < 1) {
                 velocity = 0;
                 isBouncing = false;
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     function resetBallShape() {
         ball.style.transform = "translateX(-50%) scale(1,1)";
-        ball.style.transition = "transform 0.2s ease-out"; // ✅ Ajoute une transition fluide
+        ball.style.transition = "transform 0.2s ease-out"; // Ajoute une transition fluide
         setTimeout(function () { return ball.style.transition = ""; }, 200);
     }
     
